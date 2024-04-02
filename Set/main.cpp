@@ -9,10 +9,9 @@ int main()
 	maksiSet.add(2);
 	maksiSet.add(1);
 	maksiSet.add(3);
-
 	
 
-	/*maksiSet.print();*/
+	maksiSet.print();
 
 	return 0;
 }
