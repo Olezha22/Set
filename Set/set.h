@@ -94,10 +94,6 @@ int Set<T>::getSize() const {
 
 template <typename T>
 bool Set<T>::contain(const T& x) const {
-    if (size == 0) {
-        std::cout << "Set is empty." << std::endl;
-        return;
-    }
     Node* current = head;
     while (current != nullptr) {
         if (current->value == x) {
@@ -110,10 +106,6 @@ bool Set<T>::contain(const T& x) const {
 
 template <typename T>
 Set<T>& Set<T>::remove(const T& x) {
-    if (size == 0) {
-        std::cout << "Set is empty." << std::endl;
-        return;
-    }
     Node* current = head;
     Node* prev = nullptr;
     while (current != nullptr) {
@@ -136,8 +128,9 @@ Set<T>& Set<T>::remove(const T& x) {
 
 template <typename T>
 void Set<T>::print() const {
-    if (size == 0) {
-        std::cout << "Set is empty." << std::endl;
+    if (size == 0)
+    {
+        std::cout << "Set is empty...\n";
         return;
     }
     Node* current = head;
@@ -151,10 +144,6 @@ void Set<T>::print() const {
 
 template <typename T>
 void Set<T>::deleteAll() {
-    if (size == 0) {
-        std::cout << "Set is empty." << std::endl;
-        return;
-    }
     Node* current = head;
     while (current != nullptr) {
         Node* next = current->next;
@@ -167,10 +156,6 @@ void Set<T>::deleteAll() {
 
 template <typename T>
 Set<T> Set<T>::unionSet(const Set& S) const {
-    if (S.size == 0) {
-        std::cout << "Set is empty." << std::endl;
-        return;
-    }
     Set<T> result;
     Node* current = head;
     while (current != nullptr) {
@@ -187,10 +172,6 @@ Set<T> Set<T>::unionSet(const Set& S) const {
 
 template <typename T>
 Set<T> Set<T>::intersect(const Set& S) const {
-    if (S.size == 0) {
-        std::cout << "Set is empty. So intersect is null" << std::endl;
-        return;
-    }
     Set<T> result;
     Node* current = head;
     while (current != nullptr) {
