@@ -3,13 +3,8 @@
 
 
 
-
-
-
 int main() 
 {
-
-    
     std::cout << "\n1 Task: \n\n";//Sofiya
     Set<char> expression;
     char expr[] = {'(', '2', '*', '3', ')',  '+' , '2'};

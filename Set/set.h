@@ -28,36 +28,39 @@ private:
     int size;
 
 public:
-    Set();
-    Set(const Set&);
-    Set(T* elements, int n);
-    ~Set();
+    Set();//oleh
+    Set(const Set&);//andriy
+    Set(T* elements, int n);//taras
+    ~Set();//sofia
     Set& operator=(const Set&);
-    Set& add(T x);
-    Set& add(T* x, int n);
-    int getSize() const;
-    Set unionSet(const Set&) const;
+    Set& add(T x);//sofia
+    Set& add(T* x, int n);//taras
+    int getSize() const;//andriy
+    Set unionSet(const Set&) const;//oleh
     Set unionSetIfNotContains(const Set&) const;
-    Set intersect(const Set&) const;
-    Set difference(const Set&) const;
-    Set sym_difference(const Set&) const;
-    bool contain(const T& x) const;
-    Set& remove(const T& x);
-    void print() const;
-    void deleteAll();
+    Set intersect(const Set&) const;//andriy
+    Set difference(const Set&) const;//taras
+    Set sym_difference(const Set&) const;//sofia
+    bool contain(const T& x) const;//taras
+    Set& remove(const T& x);//sofia
+    void print() const;//oleh
+    void deleteAll();//sofia
     void calculateExp();
     Set& addIfNotContains(T x);
     Set<T>& addIfNotContains(T* x, int n);
     Set<T>& repeatedChars(bool is);
-    void readFrom() const;
+    void writeTo(std::ostream& os) const;//oleh
     T operator[](int index) const;
 };
+
 
 int digits(int n);
 void task31(char chars[]);
 void task32(char chars[]);
 void task33(char chars[]);
 void eratosthenes(int n);
+
+
 
 
 template <typename T>
@@ -92,16 +95,18 @@ Set<T>::Set(const Set& S) : head(nullptr), size(0) {
 }
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const Set<T>& set) {
-    set.readFrom();
+    set.writeTo(os);
     return os;
 }
 
 template <typename T>
-void Set<T>::readFrom() const
+void Set<T>::writeTo(std::ostream& os) const
 {
+    os << "Set elements: ";
     Node* current = head;
     while (current != nullptr) {
-        std::cout << current->value;
+        
+        os << current->value << " ";
         current = current->next;
     }
 }
