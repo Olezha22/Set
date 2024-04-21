@@ -118,6 +118,7 @@ Set<T>::Set(T* elements, int n) : head(nullptr), size(0) {
     }
 }
 
+
 template <typename T>
 Set<T>::~Set() {
     deleteAll();
@@ -167,6 +168,7 @@ Set<T>& Set<T>::repeatedChars(bool is) {
 }
 
 
+
 template <typename T>
 Set<T>& Set<T>::addIfNotContains(T x) {
     if (!contain(x)) {
@@ -191,6 +193,7 @@ Set<T>& Set<T>::addIfNotContains(T x) {
     return *this;
 }
 
+
 template <typename T>
 Set<T>& Set<T>::addIfNotContains(T* x, int n) {
     for (int i = 0; i < n; ++i) {
@@ -198,6 +201,7 @@ Set<T>& Set<T>::addIfNotContains(T* x, int n) {
     }
     return *this;
 }
+
 
 template <typename T>
 Set<T>& Set<T>::add(T x) {
